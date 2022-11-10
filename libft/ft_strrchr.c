@@ -1,4 +1,4 @@
-char *strrchr(char *str, int a)
+char *ft_strrchr(char *str, int a)
 {
 	int i;
 
