@@ -10,7 +10,7 @@
 #include "ft_memset.c"
 #include "ft_bzero.c"
 #include "ft_memcpy.c"
-//#include "ft_memmove.c"
+#include "ft_memmove.c"
 #include "ft_strlcpy.c"
 #include "ft_strlcat.c"
 #include "ft_toupper.c"
@@ -19,9 +19,9 @@
 #include "ft_strrchr.c"
 #include "ft_strncmp.c"
 #include "ft_memchr.c"
-#include "ft_memcmp.c"
-#include "ft_strnstr.c"
-#include "ft_atoi.c"
+//#include "ft_memcmp.c"
+//#include "ft_strnstr.c"
+//#include "ft_atoi.c"
 
 int main()
 {
@@ -69,12 +69,12 @@ printf("Test de ft_memset :\n");
 	else
 		printf("Failed.\n");
 
-	printf("\nTest de ft_memcmp : \n");
+	/*printf("\nTest de ft_memcmp : \n");
 	printf("0 : %d\n", ft_memcmp("test", "test", 4));
 	printf("negatif : %d\n", ft_memcmp("test", "test2", 5));
 	printf("0 : %d\n", ft_memcmp("test", "test2", 4));
 	printf("positif : %d\n", ft_memcmp("\200", "\0", 4));
-	printf("positif : %d\n", ft_memcmp("tesu", "test", 6));
+	printf("positif : %d\n", ft_memcmp("tesu", "test", 6));*/
 
 	printf("\nTest de ft_strlen : \n");
 	printf("0 : %lu\n", ft_strlen(""));
@@ -159,7 +159,7 @@ printf("Test de ft_memset :\n");
 	printf("10, destsou: %lu, %s\n", ft_strlcat(d6, c1, 8), d6);
 	printf("10, destsource : %lu, %s\n", ft_strlcat(d7, c1, 13), d7);
 
-	printf("\nTest de ft_strnstr :\n");
+	/*printf("\nTest de ft_strnstr :\n");
 	printf("ft_strnstr(\"bonjour\", \"ou\", 13) : our : %s\n", ft_strnstr("bonjour", "ou", 13));
 	printf("ft_strnstr(\"bonjour\", \"njo\", 4) : (null) : %s\n", ft_strnstr("bonjour", "njo", 4));
 	printf("ft_strnstr(\"bonjour\", \"njo\", 5) : njour : %s\n", ft_strnstr("bonjour", "njo", 5));
@@ -177,5 +177,5 @@ printf("Test de ft_memset :\n");
 	//printf("%d (long max %ld) : %d\n", atoi("9223372036854775807"), LONG_MAX, ft_atoi("9223372036854775807"));
 	//printf("%d (long max + 1) : %d\n", atoi("9223372036854775808"), ft_atoi("9223372036854775808"));
 	//printf("%d (long min %ld) : %d\n", atoi("−9223372036854775808"), LONG_MIN, ft_atoi("−9223372036854775808"));
-	//printf("%d (long min - 1) : %d\n", atoi("−9223372036854775809"), ft_atoi("−9223372036854775809"));
+	//printf("%d (long min - 1) : %d\n", atoi("−9223372036854775809"), ft_atoi("−9223372036854775809"));*/
 }
