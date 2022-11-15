@@ -1,10 +1,10 @@
-char *ft_strrchr(char *str, int a)
+char *ft_strrchr(const char *s, int c)
 {
 	int i;
 
-	i = ft_strlen(str);
-	while (i--)
-		if(str[i] == a)
-			return (&src[i]);
+	i = ft_strlen((char *)s);
+	while (i-- >= 0)
+		if(s[i] == c)
+			return ((char *) &s[i]);
 	return (NULL);
 }

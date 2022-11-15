@@ -1,13 +1,18 @@
-void	ft_bzero(void *str, size_t n)
+/*
+The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area.
+Return Value: None
+*/
+
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*str;
 
 	i = 0;
-	s = (char *) str;
-	while(n)
+	str = (char *) s;
+	while (i < n)
 	{
-		s[i] = 0;
+		str[i] = 0;
 		i++;
-		n--;
 	}
 }

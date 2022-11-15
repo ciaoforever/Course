@@ -1,4 +1,4 @@
-int ft_tolower.c(int c)
+int	ft_tolower(int c)
 {
         if ( c >= 'A' && c < 'Z')
                 c += 32;
