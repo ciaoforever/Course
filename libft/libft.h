@@ -6,7 +6,7 @@
 /*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:28:56 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/18 16:15:23 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:04:21 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stlib.h>
+# include <stdlib.h>
 
 //da cancellare in seguito
 

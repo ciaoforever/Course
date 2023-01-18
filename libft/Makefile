@@ -6,7 +6,7 @@
 #    By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:37:33 by lvignoli          #+#    #+#              #
-#    Updated: 2023/01/18 18:39:38 by lvignoli         ###   ########.fr        #
+#    Updated: 2023/01/18 19:03:23 by lvignoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 FLAGS = -Wextra -Werror -Wall
@@ -18,13 +18,13 @@ SRCS = ft_atoi.c ft_calloc.c ft_isalpha.c ft_isdigit.c ft_itoa.c ft_memcmp.c ft_
 
 BONUS = \
 
-OBJS = ${SRCS:.c =.o}
+OBJS = ${SRCS:.c=.o}
 
 CC = gcc ${FLAGS}
 RM = rm -f
 
 .c.o:
-	${CC} -g -c $< -o ${<:.c = .o}
+	${CC} -g -I . -c $< -o ${<:.c=.o}
 
 ${NAME} : ${OBJS}
 	ar rcs ${NAME} ${OBJS}

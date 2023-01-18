@@ -1,3 +1,4 @@
+#include <libft.h>
 
 int	count_words(char const	*s,char c)
 {
@@ -48,9 +49,9 @@ char	*wordfill(const char	*s, int start, int finish)
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int	tmp;
+	size_t	i;
+	size_t	j;
+	size_t	tmp;
 	char	**split;
 	
 	i = 0;

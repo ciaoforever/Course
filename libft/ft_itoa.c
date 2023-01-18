@@ -1,3 +1,4 @@
+#include <libft.h>
 
 int	cint(int a)
 {
@@ -19,7 +20,6 @@ int	cint(int a)
 
 int	ft_sign(int a)
 {
-	int sign;
 	if (a >= 0)
 		return(0);
 	else
