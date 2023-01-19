@@ -6,7 +6,7 @@
 /*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:04:36 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/19 12:08:16 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:39:37 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <libft.h>
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!dst || !src)
+	if (!dst && !src)
 		return (0);
 	if ((size_t)dst - (size_t)src < len)
 	{
