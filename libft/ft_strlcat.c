@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/19 11:38:27 by lvignoli          #+#    #+#             */
+/*   Updated: 2023/01/19 12:22:38 by lvignoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <libft.h>
+
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	i;
@@ -25,4 +38,3 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[j] = '\0';
 	return (dest_len + src_len);
 }
-

@@ -1,4 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/19 12:04:36 by lvignoli          #+#    #+#             */
+/*   Updated: 2023/01/19 12:08:16 by lvignoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <libft.h>
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
@@ -12,14 +24,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (i >= 0 && i < len)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		       i--;	
+			i--;
 		}
 	}
 	else
+	{
 		while (i < len)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
+	}
 	return (dst);
 }
