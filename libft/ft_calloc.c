@@ -6,18 +6,18 @@
 /*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:01:41 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/19 12:02:11 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:18:54 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	ptr = (void *)malloc(nmemb * size);
-	ft_bzero(ptr, nmemb);
+	if (!ptr)
+		return (0);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

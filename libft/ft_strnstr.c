@@ -6,10 +6,10 @@
 /*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:40:34 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/19 19:16:43 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:25:12 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (!*little)
 		return ((char *)big);
+	if (!big && !len)
+		return (NULL);
 	while (big[i] && i < len)
 	{
 		j = 0;

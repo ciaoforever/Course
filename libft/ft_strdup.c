@@ -6,10 +6,10 @@
 /*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:37:01 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/19 11:38:10 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:26:22 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
