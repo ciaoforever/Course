@@ -62,6 +62,17 @@ void	ft_initialize(size_t *i, size_t *j, size_t *tmp)
 	*tmp = 0;
 }
 
+void	*free_all(char **s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		free (s[i]);
+	free (s);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -69,8 +80,6 @@ char	**ft_split(char const *s, char c)
 	size_t	tmp;
 	char	**split;
 
-	if (!s)
-		return (NULL);
 	ft_initialize(&i, &j, &tmp);
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
@@ -80,7 +89,11 @@ char	**ft_split(char const *s, char c)
 		if (s[i] == c || i == ft_strlen(s))
 		{
 			if (tmp != i)
+			{
 				split[j++] = wordfill(s, tmp, i);
+				if (!split[j - 1])
+					return (free_all(split));
+			}
 			tmp = i + 1;
 		}
 		i++;
