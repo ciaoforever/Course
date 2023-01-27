@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:01:49 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:24 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:00:13 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include "libft.h" 
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

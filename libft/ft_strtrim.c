@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:55:39 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/27 14:36:27 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:59:12 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	end;
 	char			*trs;
 
+	if (!set || !s1)
+		return (NULL);
 	start = firsttrim(s1, set);
 	end = endtrim(s1, set);
 	if (start > end)

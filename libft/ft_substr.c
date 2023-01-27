@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:20:46 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/27 14:52:58 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:29:39 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
+		return (ft_calloc(1, 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	subs = (char *) malloc(sizeof(*s) * (len + 1));
 	if (!subs)
 		return (NULL);

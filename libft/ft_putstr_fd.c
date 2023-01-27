@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lvignoli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:41:43 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/25 17:42:21 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:56:24 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 }
