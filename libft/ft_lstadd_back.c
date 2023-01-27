@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:52:24 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/26 17:01:44 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:22:47 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {	
-	t_list	*tmp;
-
 	if (!lst || !new)
 		return ;
 	if (*lst)
-	{
-		tmp = ft_lstlast(*lst);
-		tmp->next = new;
-	}
+		ft_lstlast(*lst)->next = new;
 	else
 		*lst = new;
 }

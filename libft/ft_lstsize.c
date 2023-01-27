@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:03:02 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/01/26 15:25:08 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:42:38 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	size;
 
 	size = 0;
-	if (!lst)
-		return (size);
-	size++;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		size++;
 		lst = lst->next;
