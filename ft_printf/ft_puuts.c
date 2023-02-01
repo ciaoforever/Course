@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:56:33 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/02/01 15:56:37 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:04:44 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,26 @@ size_t	ft_strlen(char const *str)
 	return (i);
 }
 
-int	ft_puutnbr(int n)
+void	ft_puutnbr(int n, int *written)
 {
-	int			a;
-	static int	written;
+	int	a;
 
-	written = 0;
 	if (n == -2147483648)
-		written += write(1, "-2147483648", 11);
+		*written += write(1, "-2147483648", 11);
 	else
 	{
 		if (n < 0)
 		{
 			n = n * (-1);
-			written += write(1, "-", 1);
+			*written += write(1, "-", 1);
 		}
 		a = n % 10;
 		n = n / 10;
 		if (n > 0)
-			ft_puutnbr(n);
+			ft_puutnbr(n, written);
 		a += 48;
-		written += write(1, &a, 1);
+		*written += write(1, &a, 1);
 	}
-	return (written);
 }
 
 int	ft_u_puutnbr(unsigned int n)
@@ -56,7 +53,7 @@ int	ft_u_puutnbr(unsigned int n)
 	a = n % 10;
 	n = n / 10;
 	if (n > 0)
-		ft_puutnbr(n);
+		ft_u_puutnbr(n);
 	a += 48;
 	written += write(1, &a, 1);
 	return (written);
@@ -70,6 +67,6 @@ int	ft_puutchar(int c)
 int	ft_puutstr(char *s)
 {
 	if (!s)
-		return (0);
+		return (write(1, "(null)", 6));
 	return (write(1, s, ft_strlen(s)));
 }
