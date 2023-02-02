@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:42:26 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/02/01 18:59:20 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:17:59 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_puutnbr(int n, int *written);
 int		ft_u_puutnbr(unsigned int n);
 int		ft_puutchar(int c);
 int		ft_puutstr(char *s);
-int		ft_x_puutnbr(char c, unsigned long long nb);
-int		ft_xp_choose(char c, unsigned long long nb);
+int		ft_x_puutnbr(char c, unsigned int nb);
+int		ft_p_puutnbr(char c, unsigned long long nb);
 int		ft_printf(const char *str, ...);
 #endif
