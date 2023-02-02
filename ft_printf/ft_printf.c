@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <limits.h>
 #include "libftprintf.h"
 
 int	ft_choose(va_list *lst, char c)
