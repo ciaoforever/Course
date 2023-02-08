@@ -12,6 +12,33 @@
 
 #include "get_next_line.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = (char *) s;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*ptr;
+
+	if (nmemb >= SIZE_MAX && size >= SIZE_MAX)
+		return (NULL);
+	ptr = (void *)malloc(nmemb * size);
+	if (!ptr)
+		return (0);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
+}
+
 size_t	ft_strlen(char const *str)
 {
 	size_t	i;
@@ -64,4 +91,27 @@ char	*ft_strchr(const char *src, int a)
 	if (a == '\0')
 		return ((char *)&src[i]);
 	return (NULL);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*subs;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	if (start >= ft_strlen(s))
+		return (ft_calloc(1, 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	subs = (char *) malloc(sizeof(*s) * (len + 1));
+	if (!subs)
+		return (NULL);
+	while (start-- > 0 && *s)
+		s++;
+	while (*s && i < len)
+		subs[i++] = *(s++);
+	subs[i] = 0;
+	return (subs);
 }
