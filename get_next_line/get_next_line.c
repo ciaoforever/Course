@@ -6,7 +6,7 @@
 /*   By: lvignoli <lvignoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 14:59:13 by lvignoli          #+#    #+#             */
-/*   Updated: 2023/02/06 18:27:54 by lvignoli         ###   ########.fr       */
+/*   Updated: 2023/02/09 21:52:39 by lvignoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	find_n(char	*buffer)
 	int	i;
 
 	i = 0;
-	while(buffer[i])
+	if (!buffer)
+		return (-1);
+	while (buffer[i])
 	{
 		if (buffer[i] != '\n')
 			i++;
@@ -29,17 +31,33 @@ int	find_n(char	*buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE];
+	static char	*magnus;
+	char		buffer[BUFFER_SIZE + 1];
 	char		*line;
 	int			i;
+	size_t		size;
 
-	/*if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (NULL);*/
-	if (!buffer)
-		read(fd, buffer, BUFFER_SIZE);
-	i = find_n(buffer);
-	if (i != -1)
-		line = ft_substr((char *)buffer, 0, i);
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
+	i = find_n(magnus);
+	while (i < 0)
+	{
+		size = read(fd, buffer, BUFFER_SIZE);
+		if (!size)
+		{
+			if (magnus)
+				i = ft_strlen(magnus);
+			break ;
+		}
+		buffer[size] = 0;
+		magnus = ft_strjoin(magnus, buffer);
+		i = find_n(magnus);
+	}
+	if (!magnus)
+		return (NULL);
+	line = ft_substr(magnus, 0, ++i);
+	magnus = ft_memcpy(magnus, magnus + i, ft_strlen(magnus) - i);
+	printf("$%s\n", magnus);
 	return (line);
 }
 
@@ -52,8 +70,10 @@ int	main()
 	fd = open("teeext.txt", O_RDONLY);
 	while (i < 1)
 	{
-		printf("%s", get_next_line(fd));
+		//printf("%s", get_next_line(fd));
+		get_next_line(fd);
 		i++;
 	}
 	close (fd);
+	return (0);
 }
